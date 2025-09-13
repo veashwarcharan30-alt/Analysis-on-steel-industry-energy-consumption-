@@ -1,25 +1,66 @@
-# Analysis-on-steel-industry-energy-consumption-prediction using ML
+# steel industry energy consumption prediction regression 
 
-Regression Project
+Project Overview – Predicting Energy Usage in the Steel Industry
+Objective
 
-Overview: This project focuses on predicting energy usage (kWh) in the steel industry using regression techniques. The dataset includes operational and environmental factors that influence power consumption.
+To design a machine learning model for predicting energy consumption (Usage_kWh) in the steel industry, enabling eco-friendly and sustainable production methods.
 
-Objective:
+Dataset
 
-To analyze the factors affecting energy consumption.
-To build a predictive model for Usage_kWh (Target Variable).
-Data: Total records - 35040, variables - 11 Attributes(Features)
+Records: 35,040
 
-| **Attribute**                            | **Description**                                                |
-| ---------------------------------------- | -------------------------------------------------------------- |
-| date                                     | Timestamp of the record                                        |
-| Day\_of\_week                            | Day of the week (categorical, later one-hot encoded)           |
-| WeekStatus                               | Whether the day is a weekday (1) or weekend (0)                |
-| Load\_Type                               | Type of load (categorical, later encoded into dummy variables) |
-| Usage\_kWh                               | Target Variable – Power usage in kilowatt-hours                |
-| Lagging\_Current\_Reactive.Power\_kVarh  | Lagging current reactive power consumption (kVarh)             |
-| Leading\_Current\_Reactive\_Power\_kVarh | Leading current reactive power consumption (kVarh)             |
-| Lagging\_Current\_Power\_Factor          | Lagging power factor                                           |
-| Leading\_Current\_Power\_Factor          | Leading power factor                                           |
-| CO2(tCO2)                                | Carbon dioxide emissions in tonnes of CO2                      |
-| NSM                                      | Number of seconds from midnight (time indicator)               |
+Features: 11 (4 categorical, 7 continuous)
+
+Target: Usage_kWh (energy usage in kWh)
+
+Key Features:
+
+date (timestamp)
+
+Day_of_week, WeekStatus, Load_Type (categorical → one-hot encoded)
+
+Lagging_Current_Reactive.Power_kVarh, Leading_Current_Reactive_Power_kVarh
+
+Lagging_Current_Power_Factor, Leading_Current_Power_Factor
+
+CO2(tCO2) (carbon emissions)
+
+NSM (time of day in seconds)
+
+Methodology
+
+Data Preprocessing – Categorical encoding (weekday/weekend, one-hot for day/load type), outlier removal using IQR, scaling.
+
+EDA – Heatmaps, histograms, scatterplots, and time series analysis.
+
+Usage strongly correlates with CO₂ and reactive power.
+
+Demand spikes observed in time series.
+
+Models Tested
+
+Linear Regression, KNN, SVR, Decision Tree, Random Forest, Bagging, AdaBoost, Gradient Boost, XGBoost, ANN.
+
+Evaluation – Train-test splits (60-40, 70-30, 75-25, 80-20) with metrics like R², MAE, MAPE.
+
+Results
+
+Best Model: XGBoost (80:20 split) → R² = 0.9911
+
+Other strong models: Gradient Boost, Random Forest, ANN.
+
+Simpler models (e.g., Linear Regression, SVR) performed poorly compared to ensemble/deep models.
+
+Conclusion
+
+Advanced ML models (especially XGBoost) capture complex, non-linear energy consumption patterns better than traditional regression.
+
+ML can provide accurate insights for sustainable energy management in steel manufacturing.
+
+Future Scope
+
+Incorporating external factors (weather, market demand, energy prices).
+
+Deploying models in real-time monitoring systems.
+
+Exploring deep learning architectures for further improvement.
