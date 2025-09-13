@@ -1,4 +1,4 @@
-# steel industry energy consumption prediction regression 
+# Steel Industry Energy Consumption Prediction Regression 
 
 Project Overview – Predicting Energy Usage in the Steel Industry
 Objective
@@ -57,7 +57,7 @@ Advanced ML models (especially XGBoost) capture complex, non-linear energy consu
 
 ML can provide accurate insights for sustainable energy management in steel manufacturing.
 
-Future Scope
+Future scope
 
 Incorporating external factors (weather, market demand, energy prices).
 
